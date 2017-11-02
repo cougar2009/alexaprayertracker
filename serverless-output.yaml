@@ -1,0 +1,12 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  Lambda:
+    Properties:
+      CodeUri: s3://alexaprayertrackerbucket/3461ebb72a9441414749b848292645ca
+      Environment:
+        Variables:
+          S3_BUCKET: alexaprayertrackerbucket
+      Handler: index.handler
+      Runtime: nodejs6.10
+    Type: AWS::Serverless::Function
+Transform: AWS::Serverless-2016-10-31

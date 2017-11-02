@@ -1,0 +1,11 @@
+version: 0.1
+phases:
+  install:
+    commands:
+      - npm install time
+      - aws cloudformation package --template-file example.yaml --s3-bucket alexaprayertrackerbucket
+                                   --output-template-file serverless-output.yaml
+artifacts:
+  type: zip
+  files:
+    - serverless-output.yaml
